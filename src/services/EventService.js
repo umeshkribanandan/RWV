@@ -15,5 +15,12 @@ export default {
   },
   getEvent(id) {
     return API.get('/events/' + id)
+  },
+  postEvent(event) {
+    return API.post('/events', event)
+      .then(() => {})
+      .catch(() => {
+        console.log('service:error while creating event')
+      })
   }
 }
