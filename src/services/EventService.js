@@ -1,5 +1,5 @@
 import axios from 'axios'
-import NProgress from 'nprogress'
+//import NProgress from 'nprogress'
 
 const API = axios.create({
   baseURL: 'http://localhost:3000',
@@ -10,15 +10,15 @@ const API = axios.create({
   }
 })
 
-API.interceptors.request.use(config => {
-  NProgress.start()
-  return config
-})
+// API.interceptors.request.use(config => {
+//   NProgress.start()
+//   return config
+// })
 
-API.interceptors.response.use(response => {
-  NProgress.done()
-  return response
-})
+// API.interceptors.response.use(response => {
+//   NProgress.done()
+//   return response
+// })
 
 export default {
   getEvents(perPage, page) {
