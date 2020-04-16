@@ -93,7 +93,7 @@ export default {
           })
           this.event = this.createFreshEvent()
         })
-        .catch(() => {
+        .catch(error => {
           console.log('dispatch:problem creating event')
         })
     }
