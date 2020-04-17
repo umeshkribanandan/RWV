@@ -247,6 +247,38 @@
       "date": "2020-04-24T14:28:00.000Z",
       "time": "5:00",
       "attendees": []
+    },
+    {
+      "id": 6721240,
+      "category": "community",
+      "organizer": {
+        "user": {
+          "id": "abc231",
+          "name": "Umesh"
+        }
+      },
+      "title": "tes community",
+      "description": "tes community",
+      "location": "tes community",
+      "date": "2020-04-25T09:51:00.000Z",
+      "time": "3:00",
+      "attendees": []
+    },
+    {
+      "id": 625920,
+      "category": "housing",
+      "organizer": {
+        "user": {
+          "id": "abc231",
+          "name": "Umesh"
+        }
+      },
+      "title": "housing domian",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
