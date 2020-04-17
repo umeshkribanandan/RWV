@@ -84,20 +84,10 @@ export const actions = {
       commit('SET_EVENT', event)
       return event
     } else {
-      return EventService.getEvent(eventId)
-        .then(response => {
-          commit('SET_EVENT', response.data)
-          return response.data
-        })
-        .catch(error => {
-          const n = {
-            type: 'error',
-            message: 'There was a problem fetching event: ' + error.message
-          }
-          dispatch('notification/addNotification', n, {
-            root: true
-          })
-        })
+      return EventService.getEvent(eventId).then(response => {
+        commit('SET_EVENT', response.data)
+        return response.data
+      })
     }
   }
 }
