@@ -5,11 +5,10 @@ import EventShow from '../views/EventShow.vue'
 import EventCreate from '../views/EventCreate.vue'
 import User from '../views/User.vue'
 import NotFoundComponent from '../views/NotFoundComponent.vue'
-
+import NProgress from 'nprogress'
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'event-list',
     component: EventList
@@ -51,4 +50,11 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((routeTo, routeFrom, next) => {
+  NProgress.start()
+  next()
+})
+router.afterEach((routeTo, routeFrom) => {
+  NProgress.done()
+})
 export default router
