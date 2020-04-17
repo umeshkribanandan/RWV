@@ -6,6 +6,8 @@ import EventCreate from '../views/EventCreate.vue'
 import User from '../views/User.vue'
 import NotFoundComponent from '../views/NotFoundComponent.vue'
 import NProgress from 'nprogress'
+import store from '@/store/index.js'
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -17,7 +19,15 @@ const routes = [{
     path: '/event/:id',
     name: 'event-show',
     component: EventShow,
-    props: true
+    props: true,
+    beforeEnter(routeTo, routeFrom, next) {
+      NProgress.start()
+      store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
+        NProgress.done()
+        routeTo.params.event = event
+        next()
+      })
+    }
   },
   {
     path: '/event/create',
@@ -50,11 +60,4 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((routeTo, routeFrom, next) => {
-  NProgress.start()
-  next()
-})
-router.afterEach((routeTo, routeFrom) => {
-  NProgress.done()
-})
 export default router

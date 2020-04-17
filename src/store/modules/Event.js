@@ -81,10 +81,12 @@ export const actions = {
     let event = getters.getEventById(eventId)
     if (event) {
       commit('SET_EVENT', event)
+      return event
     } else {
       return EventService.getEvent(eventId)
         .then(response => {
           commit('SET_EVENT', response.data)
+          return response.data
         })
         .catch(error => {
           const n = {

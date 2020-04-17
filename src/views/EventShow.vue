@@ -29,19 +29,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import store from '@/store/index'
-
 export default {
-  props: ['id'],
-  // beforeRouteEnter(routeTo, routeFrom, next) {
-  //   store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
-  //     next()
-  //   })
-  // },
-  computed: mapState({
-    event: state => state.event.event
-  })
+  props: ['event']
 }
 </script>
 <style scoped>
