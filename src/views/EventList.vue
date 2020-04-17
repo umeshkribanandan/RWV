@@ -30,7 +30,6 @@ import NProgress from 'nprogress'
 function getPageEvents(routeTo, next) {
   NProgress.start()
   const currentPage = parseInt(routeTo.query.page) || 1
-  console.log(currentPage)
   store.dispatch('event/fetchEvents', { page: currentPage }).then(events => {
     NProgress.done()
     routeTo.params.page = currentPage

@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  inheritAttrs: fasle,
+  inheritAttrs: false,
   props: {
     buttonClass: {
       type: String

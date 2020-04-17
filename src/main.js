@@ -6,8 +6,12 @@ import store from './store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
+import DateFilter from '@/filters/date'
+
 import Vuelidate from 'vuelidate'
 import 'nprogress/nprogress.css'
+
+Vue.filter('date', DateFilter)
 
 const requireComponent = require.context(
   './components',

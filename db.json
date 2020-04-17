@@ -327,6 +327,22 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "id": 611574,
+      "category": "housing",
+      "organizer": {
+        "user": {
+          "id": "abc231",
+          "name": "Umesh"
+        }
+      },
+      "title": "asdasd",
+      "description": "asdasd",
+      "location": "asdasd",
+      "date": "2020-04-23T21:18:00.000Z",
+      "time": "2:00",
+      "attendees": []
     }
   ]
 }
