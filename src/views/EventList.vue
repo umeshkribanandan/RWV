@@ -1,22 +1,14 @@
 <template>
   <div>
     <h1>Event Listing</h1>
-    <EventCard v-for="event in event.events" :key="event.id" :event="event">
-    </EventCard>
+    <transition-group tag="div" name="slide-up" appear v-move>
+      <EventCard v-for="event in event.events" :key="event.id" :event="event"></EventCard>
+    </transition-group>
     <template v-if="hasPreviousPage">
-      <router-link
-        :to="{ name: 'event-list', query: { page: page - 1 } }"
-        rel="prev"
-        >Prev Page
-      </router-link>
-      |
+      <router-link :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev">Prev Page</router-link>|
     </template>
     <template v-if="hasNextPage">
-      <router-link
-        :to="{ name: 'event-list', query: { page: page + 1 } }"
-        rel="next"
-        >Next Page</router-link
-      >
+      <router-link :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next">Next Page</router-link>
     </template>
   </div>
 </template>
